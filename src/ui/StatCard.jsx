@@ -6,7 +6,7 @@ const StatCard = ({ title, value, change, changeType, percentage }) => {
       <div>
         <h3 className="text-lg">Net Profit</h3>
         <div className="flex items-baseline">
-          <p className="text-4xl font-bold">$ 6789.34</p>
+          <p className="text-4xl font-bold">$ 6780.34</p>
           <div
             className={`ml-2 flex items-center ${
               changeType === "increase" ? "text-green-500" : "text-red-500"
