@@ -1,4 +1,7 @@
 import React from "react";
+import user01 from "../assets/user01.png";
+import user02 from "../assets/user02.png";
+import user03 from "../assets/user03.png";
 
 const orders = [
   {
@@ -6,22 +9,25 @@ const orders = [
     orderNo: 15478256,
     amount: "$124.00",
     status: "Delivered",
+    profileImage: user01,
   },
   {
     customer: "Jane Cooper",
     orderNo: 48967586,
     amount: "$305.02",
     status: "Pending",
+    profileImage: user02,
   },
-
   {
     customer: "Jane Cooper",
     orderNo: 48967586,
     amount: "$305.02",
     status: "Pending",
+    profileImage: user03,
   },
   // More orders...
 ];
+
 const statusStyles = {
   Delivered: "bg-green-500",
   Pending: "bg-red-500",
@@ -44,18 +50,27 @@ const RecentOrders = () => {
           {orders.map((order, index) => (
             <tr
               key={index}
-              className="border-b justify-center items-baseline dark:border-gray-700 "
+              className="border-b justify-center items-baseline dark:border-gray-700"
             >
-              <td className="py-2">{order.customer}</td>
+              <td className="py-2 flex items-center">
+                <img
+                  src={order.profileImage}
+                  alt={`${order.customer}'s profile`}
+                  className="w-10 h-10 rounded-full mr-4"
+                />
+                {order.customer}
+              </td>
               <td className="py-2">{order.orderNo}</td>
               <td className="py-2">{order.amount}</td>
-              <span
-                className={`inline-block px-2 py-1  text-white rounded-full ${
-                  statusStyles[order.status] || "bg-gray-500"
-                }`}
-              >
-                {order.status}
-              </span>{" "}
+              <td className="py-2">
+                <span
+                  className={`inline-block px-2 py-1 text-white rounded-full ${
+                    statusStyles[order.status] || "bg-gray-500"
+                  }`}
+                >
+                  {order.status}
+                </span>
+              </td>
             </tr>
           ))}
         </tbody>
