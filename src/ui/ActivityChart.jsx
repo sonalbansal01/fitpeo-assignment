@@ -7,6 +7,7 @@ import {
   YAxis,
   Tooltip,
   ResponsiveContainer,
+  CartesianGrid,
 } from "recharts";
 
 const CustomBar = (props) => {
@@ -14,7 +15,7 @@ const CustomBar = (props) => {
 
   return (
     <g>
-      <rect x={x} y={y} width={width} height={height} fill={fill} rx={10} />
+      <rect x={x} y={y} width={width} height={height} fill={fill} rx={8} />
     </g>
   );
 };
@@ -49,12 +50,17 @@ const ActivityChart = () => {
         <ResponsiveContainer width="90%" height={210}>
           <BarChart
             data={series[0].data.slice(0, itemNb).map((item, index) => ({
-              name: `Item ${index + 1}`,
+              name: `${index + 1}`,
               value1: item.value1,
               value2: item.value2,
             }))}
             margin={{ top: 10, right: 0, left: 20, bottom: 5 }}
           >
+            <CartesianGrid
+              horizontal={true}
+              vertical={false}
+              strokeDasharray="0"
+            />
             <XAxis dataKey="name" />
             <YAxis minTickGap={15} domain={[10, "dataMax"]} />
             <Tooltip cursor={false} />
@@ -62,13 +68,13 @@ const ActivityChart = () => {
               dataKey="value1"
               fill="#79a5ff"
               shape={<CustomBar />}
-              barSize={22}
+              barSize={20}
             />
             <Bar
               dataKey="value2"
               fill="#79a5ff"
               shape={<CustomBar />}
-              barSize={22}
+              barSize={20}
             />
           </BarChart>
         </ResponsiveContainer>
