@@ -29,9 +29,9 @@ const statusStyles = {
 
 const RecentOrders = () => {
   return (
-    <div className="p-5 bg-white dark:bg-gray-800  w-full rounded-lg shadow-md">
+    <div className="p-5 bg-white dark:bg-gray-800 h-min w-full col-span-2 rounded-lg shadow-md">
       <h2 className="text-lg font-bold mb-4">Recent Orders</h2>
-      <table className="w-full md:table-fixed text-left">
+      <table className="w-full h-52 md:table-fixed text-left">
         <thead>
           <tr>
             <th className="pb-2">Customer</th>

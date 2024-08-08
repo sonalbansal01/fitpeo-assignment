@@ -24,7 +24,7 @@ const feedbacks = [
 
 const CustomerFeedback = () => {
   return (
-    <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+    <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md col-span-1">
       <h2 className="text-xl font-bold mb-4">Customer's Feedback</h2>
       {feedbacks.map((feedback, index) => (
         <div key={index} className="mb-4 border-b border-slate-700	">

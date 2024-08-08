@@ -1,22 +1,17 @@
-const LinkItem = ({ href, icon: Icon, text, badge }) => {
+// LinkItem.jsx
+import React from "react";
+
+const LinkItem = ({ href, icon: Icon }) => {
   return (
     <li>
       <a
         href={href}
-        className="flex items-center p-2 text-grey-900 rounded-lg dark:text-white hover:bg-gray-100 dark:hover:bg-gray-700 "
+        className="flex items-center p-2 text-gray-900 rounded-lg dark:text-white dark:hover:bg-gray-700 hover:bg-gray-100 group"
       >
-        <Icon className="mr-3" />
-        <span className="flex-1 me-3">{text}</span>
-        {badge && (
-          <span
-            className={`inline-flex items-center justify-center px-2 ms-3 text-sm font-medium rounded-full ${badge.color}  ${badge.darkColor}`}
-          >
-            {badge.text}
-          </span>
-        )}
+        {Icon && <Icon className="w-6 h-6 mr-1" />}
       </a>
     </li>
   );
 };
-// kaha error h
+
 export default LinkItem;

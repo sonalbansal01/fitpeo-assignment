@@ -110,7 +110,7 @@ const Goals = () => {
   ];
 
   return (
-    <div className="p-4 rounded-lg bg-white dark:bg-gray-800 shadow-md">
+    <div className="p-4 rounded-lg bg-white dark:bg-gray-800 w-auto col-span-1 shadow-md">
       {stats.map((stat, index) => (
         <div key={index} className="flex justify-between items-center mb-4">
           <div className="flex items-center">

@@ -37,14 +37,14 @@ const stats = [
 
 const DashboardStats = () => {
   return (
-    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4  col-span-2">
+    <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 col-span-2">
       {stats.map((stat, index) => (
         <div key={index} className={`p-4 rounded-lg ${stat.bgColor}`}>
           <div className="flex justify-between items-center">
             <div>
               <div className="text-4xl">{stat.icon}</div>
               <div className="text-center">
-                <h3 className="text-lg ">{stat.title}</h3>
+                <h3 className="text-sm mt-2 font-bold	 ">{stat.title}</h3>
               </div>
               <div className="flex  mt-2">
                 <p className="text-2xl flex-1 ... font-bold">{stat.count}</p>
