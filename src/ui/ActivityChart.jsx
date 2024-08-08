@@ -9,20 +9,12 @@ import {
   ResponsiveContainer,
 } from "recharts";
 
-// Custom bar shape to add border-radius
 const CustomBar = (props) => {
   const { x, y, width, height, fill } = props;
 
   return (
     <g>
-      <rect
-        x={x}
-        y={y}
-        width={width}
-        height={height}
-        fill={fill}
-        rx={25} // Border radius of the rectangle
-      />
+      <rect x={x} y={y} width={width} height={height} fill={fill} rx={10} />
     </g>
   );
 };
@@ -30,7 +22,18 @@ const CustomBar = (props) => {
 const series = [
   {
     label: "series 1",
-    data: [923, 2210, 1764, 1879, 1478, 1373, 791, 1271, 620, 829],
+    data: [
+      { value1: 523, value2: 1223 },
+      { value1: 610, value2: 720 },
+      { value1: 964, value2: 1864 },
+      { value1: 879, value2: 779 },
+      { value1: 478, value2: 578 },
+      { value1: 373, value2: 1273 },
+      { value1: 791, value2: 891 },
+      { value1: 1271, value2: 1171 },
+      { value1: 620, value2: 720 },
+      { value1: 829, value2: 929 },
+    ],
   },
 ];
 
@@ -45,22 +48,27 @@ const ActivityChart = () => {
       <Box>
         <ResponsiveContainer width="90%" height={210}>
           <BarChart
-            data={series[0].data.slice(0, itemNb).map((value, index) => ({
-              name: ` ${index + 1}`,
-              value,
+            data={series[0].data.slice(0, itemNb).map((item, index) => ({
+              name: `Item ${index + 1}`,
+              value1: item.value1,
+              value2: item.value2,
             }))}
             margin={{ top: 10, right: 0, left: 20, bottom: 5 }}
           >
             <XAxis dataKey="name" />
-            <YAxis minTickGap={15} domain={[10, "dataMax"]} />{" "}
-            {/* Set min to a value greater than 0 */}
-            <Tooltip />
+            <YAxis minTickGap={15} domain={[10, "dataMax"]} />
+            <Tooltip cursor={false} />
             <Bar
-              dataKey="value"
-              fill="#79a5ff
-"
+              dataKey="value1"
+              fill="#79a5ff"
               shape={<CustomBar />}
-              barSize={30}
+              barSize={22}
+            />
+            <Bar
+              dataKey="value2"
+              fill="#79a5ff"
+              shape={<CustomBar />}
+              barSize={22}
             />
           </BarChart>
         </ResponsiveContainer>

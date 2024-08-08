@@ -96,7 +96,7 @@ const Goals = () => {
       icon: <BurgerIcon />,
       bgColor: "bg-white dark:bg-gray-800",
       changeType: "increase",
-      color: "bg-blue-800", // Using Tailwind CSS class for dark blue
+      color: "bg-blue-800",
     },
     {
       title: "Menu",
@@ -105,7 +105,7 @@ const Goals = () => {
       icon: <DishPlateIcon />,
       bgColor: "bg-white dark:bg-gray-800",
       changeType: "increase",
-      color: "bg-sky-400", // Using Tailwind CSS class for sky blue
+      color: "bg-sky-400",
     },
   ];
 
