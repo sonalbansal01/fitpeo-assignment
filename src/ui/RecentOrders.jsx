@@ -11,16 +11,27 @@ const orders = [
     customer: "Jane Cooper",
     orderNo: 48967586,
     amount: "$305.02",
-    status: "Delivered",
+    status: "Pending",
+  },
+
+  {
+    customer: "Jane Cooper",
+    orderNo: 48967586,
+    amount: "$305.02",
+    status: "Pending",
   },
   // More orders...
 ];
+const statusStyles = {
+  Delivered: "bg-green-500",
+  Pending: "bg-red-500",
+};
 
 const RecentOrders = () => {
   return (
-    <div className="p-4 bg-white dark:bg-gray-800 rounded-lg shadow-md">
+    <div className="p-5 bg-white dark:bg-gray-800  w-full rounded-lg shadow-md">
       <h2 className="text-lg font-bold mb-4">Recent Orders</h2>
-      <table className="w-full text-left">
+      <table className="w-full md:table-fixed text-left">
         <thead>
           <tr>
             <th className="pb-2">Customer</th>
@@ -29,13 +40,19 @@ const RecentOrders = () => {
             <th className="pb-2">Status</th>
           </tr>
         </thead>
-        <tbody>
+        <tbody className="mb-4">
           {orders.map((order, index) => (
-            <tr key={index} className="border-b dark:border-gray-700">
+            <tr key={index} className="border-b dark:border-gray-700 ">
               <td className="py-2">{order.customer}</td>
               <td className="py-2">{order.orderNo}</td>
               <td className="py-2">{order.amount}</td>
-              <td className="py-2">{order.status}</td>
+              <span
+                className={`inline-block px-2 py-1 text-white rounded-full ${
+                  statusStyles[order.status] || "bg-gray-500"
+                }`}
+              >
+                {order.status}
+              </span>{" "}
             </tr>
           ))}
         </tbody>

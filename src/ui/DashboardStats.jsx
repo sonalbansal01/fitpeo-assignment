@@ -6,7 +6,7 @@ const stats = [
     count: 75,
     change: 3,
     icon: "📦",
-    bgColor: "bg-gray-200 dark:bg-gray-700",
+    bgColor: "bg-white dark:bg-gray-800",
     changeType: "increase",
   },
   {
@@ -14,7 +14,7 @@ const stats = [
     count: 70,
     change: -3,
     icon: "🚚",
-    bgColor: "bg-gray-200 dark:bg-gray-700",
+    bgColor: "bg-white dark:bg-gray-800",
     changeType: "decrease",
   },
   {
@@ -22,7 +22,7 @@ const stats = [
     count: 5,
     change: 3,
     icon: "❌",
-    bgColor: "bg-gray-200 dark:bg-gray-700",
+    bgColor: "bg-white dark:bg-gray-800",
     changeType: "increase",
   },
   {
@@ -30,7 +30,7 @@ const stats = [
     count: "$12k",
     change: -3,
     icon: "💰",
-    bgColor: "bg-gray-200 dark:bg-gray-700",
+    bgColor: "bg-white dark:bg-gray-800",
     changeType: "decrease",
   },
 ];
@@ -39,10 +39,7 @@ const DashboardStats = () => {
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4  col-span-2">
       {stats.map((stat, index) => (
-        <div
-          key={index}
-          className={`p-4 rounded-lg text-white ${stat.bgColor}`}
-        >
+        <div key={index} className={`p-4 rounded-lg ${stat.bgColor}`}>
           <div className="flex justify-between items-center">
             <div>
               <div className="text-4xl">{stat.icon}</div>
