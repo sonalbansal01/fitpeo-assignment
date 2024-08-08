@@ -57,7 +57,8 @@ const ActivityChart = () => {
             <Tooltip />
             <Bar
               dataKey="value"
-              fill="#3ca3fd"
+              fill="#79a5ff
+"
               shape={<CustomBar />}
               barSize={30}
             />
