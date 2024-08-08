@@ -119,10 +119,10 @@ const Goals = () => {
             >
               {stat.icon}
             </div>
-            <h3 className="text-lg ml-4">{stat.title}</h3>
+            <h3 className="text-base ml-4">{stat.title}</h3>
           </div>
           <div className="flex items-center">
-            <p className="ml-1 flex justify-center items-center w-8 h-8 rounded-full border border-white text-white bg-gray-700">
+            <p className="ml-1 flex justify-center items-center w-8 h-8 rounded-full  text-white bg-gray-700">
               &gt;
             </p>
           </div>
