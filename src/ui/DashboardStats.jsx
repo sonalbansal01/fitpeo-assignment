@@ -8,6 +8,7 @@ const stats = [
     icon: "📦",
     bgColor: "bg-white dark:bg-gray-800",
     changeType: "increase",
+    iconColor: "bg-blue-400",
   },
   {
     title: "Total Delivered",
@@ -16,6 +17,7 @@ const stats = [
     icon: "🚚",
     bgColor: "bg-white dark:bg-gray-800",
     changeType: "decrease",
+    iconColor: "bg-green-400",
   },
   {
     title: "Total Cancelled",
@@ -24,6 +26,7 @@ const stats = [
     icon: "❌",
     bgColor: "bg-white dark:bg-gray-800",
     changeType: "increase",
+    iconColor: "bg-red-300",
   },
   {
     title: "Total Revenue",
@@ -32,6 +35,7 @@ const stats = [
     icon: "💰",
     bgColor: "bg-white dark:bg-gray-800",
     changeType: "decrease",
+    iconColor: "bg-purple-400",
   },
 ];
 
@@ -40,13 +44,17 @@ const DashboardStats = () => {
     <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 col-span-2">
       {stats.map((stat, index) => (
         <div key={index} className={`p-4 rounded-lg ${stat.bgColor}`}>
-          <div className="flex justify-between items-center">
+          <div className="w-full">
             <div>
-              <div className="text-4xl">{stat.icon}</div>
-              <div className="text-center">
-                <h3 className="text-sm mt-2 font-bold	 ">{stat.title}</h3>
+              <div
+                className={`w-12 h-12 flex items-center justify-center rounded-xl ${stat.iconColor}`}
+              >
+                <span className="text-white text-2xl">{stat.icon}</span>
               </div>
-              <div className="flex  mt-2">
+
+              <h3 className="text-sm mt-2 font-bold	 ">{stat.title}</h3>
+
+              <div className="flex items-end justify-items-stretch mt-2">
                 <p className="text-2xl flex-1 ... font-bold">{stat.count}</p>
                 {stat.changeType === "increase" ? (
                   <span className="text-green-500 ">▲</span>
