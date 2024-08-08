@@ -42,12 +42,15 @@ const RecentOrders = () => {
         </thead>
         <tbody className="mb-4">
           {orders.map((order, index) => (
-            <tr key={index} className="border-b dark:border-gray-700 ">
+            <tr
+              key={index}
+              className="border-b justify-center items-baseline dark:border-gray-700 "
+            >
               <td className="py-2">{order.customer}</td>
               <td className="py-2">{order.orderNo}</td>
               <td className="py-2">{order.amount}</td>
               <span
-                className={`inline-block px-2 py-1 text-white rounded-full ${
+                className={`inline-block px-2 py-1  text-white rounded-full ${
                   statusStyles[order.status] || "bg-gray-500"
                 }`}
               >
